@@ -238,7 +238,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "A"
+      "sch_revision": "1.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -488,7 +488,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "MMS3_hat_templates.kicad_pro",
+    "filename": "MMS hat dummy.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -597,29 +597,7 @@
       "version": 5
     },
     "net_colors": null,
-    "netclass_assignments": {
-      "/Power Connector/VIN_BRD": [
-        "50V"
-      ],
-      "BRD_VIN": [
-        "50V "
-      ],
-      "Net-(D4-K)": [
-        "50V "
-      ],
-      "Net-(J8-Pin_1)": [
-        "50V "
-      ],
-      "U_reg": [
-        "50V "
-      ],
-      "VIN_CHAINBUS": [
-        "50V"
-      ],
-      "Vin": [
-        "50V "
-      ]
-    },
+    "netclass_assignments": null,
     "netclass_patterns": [
       {
         "netclass": "USB_90_DIFF",
@@ -1076,34 +1054,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "MMS3_hat_templates.kicad_sch",
-        "name": "MMS3_hat_templates",
+        "filename": "MMS hat dummy.kicad_sch",
+        "name": "MMS hat dummy",
         "uuid": "6596548a-44e0-46d8-8624-fd71cf4a3e17"
       }
     ],
-    "used_designators": "D1",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
     [
       "6596548a-44e0-46d8-8624-fd71cf4a3e17",
-      "MMS3_hat_templates"
-    ],
-    [
-      "fdb595ff-e94b-4e80-8fe7-e7d367588ab2",
-      "Interboard_connector"
-    ],
-    [
-      "ec6d73af-72b0-4068-85fb-cca3c5143749",
-      "Bus_switch"
-    ],
-    [
-      "f11c3b61-ae6a-4858-9d37-bbf426f44fb0",
-      "Power Connector"
-    ],
-    [
-      "56050d79-5900-47d6-893d-3da0e8bf5810",
-      "ID EEPROM"
+      "MMS hat dummy"
     ]
   ],
   "text_variables": {
