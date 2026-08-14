@@ -12506,7 +12506,7 @@
 		(layer "Edge.Cuts")
 		(uuid "05bd6017-511e-4def-973a-58fc7b0ca630")
 	)
-	(gr_text "MMS3 Hat Dummy\n(Led's optional)\nMade By\nWojciech Szafrański"
+	(gr_text "MMS3 Hat Dummy\n(Led's optional)\nV1.0, Made By\nWojciech Szafrański"
 		(at 176 106 0)
 		(layer "F.SilkS")
 		(uuid "fba501a5-27c7-470f-b8af-71741c200797")

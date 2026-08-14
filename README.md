@@ -1,114 +1,35 @@
-# Templatka Hat'ów ChainBus
-
-
-## Sekcja 0: Jak szybko, dobrze i tanio zrobić hata z dokumentacją
-
-Szybka lista punkcików to wyklepania zanim hat magicznie się zrobi
-
-1. **Sprawdź istniejące projekty:** Zobacz czy nie ma już jakiegoś hata który robi co potrzebujesz. Zobacz w forkach i poszukaj na githubie po hashtag'ach, jeśli nie to
-2. **Utwórz Fork:** Kliknij przycisk **Fork** w prawym górnym rogu tego repozytorium.
-
-![punkt 1](readme_zdjecia/fork.png)
-
-1. **Konfiguracja repozytorium:** Daj mu adekwatną nazwe, i z'clone'uj forka do siebie na pc
-2. **Zasady projektowania:**
-   * Dokładniejsza dokumentacja znajduje się w Sekcji 2.
-   * Do komunikacji możesz używać **wyłącznie** interfejsów: **I2C, SPI oraz UART**.
-   * Modyfikuj połączeń złącza chainbus, bus switch'a i EEPROM'a
-   * Nie modyfikuj zarysu płytki, otworów montażowych ani pozycji złączy ChainBus.
-   * Możesz usunąć złącze XT60, jeśli Twój projekt go nie wymaga.
-
-### Checklista przed zakończeniem projektu
-Przed oznaczeniem projektu jako gotowy i wykonaniem ostatecznego commita, upewnij się, że zrealizowałeś poniższe punkty:
-
-
-- [ ] Poprawiono nazwy, numer rewizji i dane w prawym dolnym rogu schematu i PCB.
-- [ ] Dodano podpis autora/autorów oraz aktualny numer wersji na PCB.
-- [ ] Zaktualizowano readme (usunąć tą sekcje)
-- [ ] Zaktualizowano opis repo żeby opisywał krótko co robi PCB i jakie ma arkusze hierarchiczne do użycia w nowych hat'ach
-- [ ] Usunięto z repozytorium zdjęcia z template'a.
-- [ ] Wybrano i zaktualizowano licencję projektu **Uwaga: Wstpęnie już są użyte licencje**.
-- [ ] Wygenerowano pliki produkcyjne Gerber
-- [ ] Zrobiono commit'a i push'a
-
-
-### Licencja
-Co do licencji, wstępnie jest użyta
-* Dla template'a - CC0 1.0 Universal  -> Róbcie co chcecie: Zmieniajce, usuńcie mój podpis, zróbcie closed source. Mi jest to obojętne
-* PCB - CERN-OHL-W -> Ktoś może to modyfikować i sprzedać, ale musi zostawić projekt open source i ciebie jako twórce
-* Software - MIT License -> Ktoś może to modyfikować i sprzedać, musi odnotować ciebie jako twórce ale **NIE MUSI ZOSTAWIĆ OPEN SOURCE**
-
-Jeśli je modyfikujesz, pamiętaj usunać treści starych licencji
-
----
+# MMS3 hat Dummy
+![zdjęcie](hat_photo.png)
 
 ## Sekcja 1: Dokumentacja Hat'a
 
 ### Krótki opis projektu
-[Tutaj wpisz krótki opis, co robi Twój moduł, jakie ma przeznaczenie i kluczowe parametry użytkowe.]
+Hat Dummy to dystans mechaniczny. Tylko tyle
 
 ### Zgodność ze standardem ChainBus
 
-* ✅ / ❌ Używa złącza ChainBus, nie zmienia jego miejsca ani pinoutu.
-* ✅ / ❌ Używa wyłącznie interfejsów I2C, SPI lub UART i nie inicjuje samodzielnie nowych transmisji (Nie jest master'em I2C albo SPI).
-* ✅ / ❌ Spełnia wymagania mechaniczne standardu (wymiary PCB, rozstaw otworów).
-* ✅ / ❌ Pobiera maksymalny prąd zgodny z ilością na jednego hat'a
-* ✅ / ❌ Obsługuje napięcie wejściowe BRD_VIN do wartości 48V.
-<!-- Usuń odpowiednie emoji. Wszystkie powinny być na zielono. Jeśli z czymś nie jest zgodny to napisz w jaki sposób -->
+* ❌ Używa złącza ChainBus, nie zmienia jego miejsca ani pinoutu. -> nie przesuwa addresów hat'a. Robi za głupi dystans mechaniczny
+* ✅  Używa wyłącznie interfejsów I2C, SPI lub UART i nie inicjuje samodzielnie nowych transmisji (Nie jest master'em I2C albo SPI).
+* ❌ Spełnia wymagania mechaniczne standardu (wymiary PCB, rozstaw otworów). -> Jest troche mniejszy
+* ✅ Pobiera maksymalny prąd zgodny z ilością na jednego hat'a
+* ✅ Obsługuje napięcie wejściowe BRD_VIN do wartości 48V.
+
 
 ### Komunikacja i adresowanie
 
-#### Adresacja I2C
-Poniższa tabela przedstawia adresację urządzeń na magistrali I2C. Wszystkie adresy podane są w formacie 7-bitowym.
-
-| Układ (IC)    | Funkcja                               |  Address   |
-| :------------ | :------------------------------------ | :--------: |
-| **JP3721**    | Sterownik piekarnika                  | `1010000b` |
-| **PCAL9535A** | Ekspander GPIO (Dioda LED, Krańcówki) | `0100000b` |
-| **TMP102**    | Czujnik temperatury                   | `1001000b` |
-
-#### Magistrala SPI
-Urządzenia SPI podłączone są bezpośrednio do magistrali systemowej bez użycia dodatkowych multiplekserów.
-
-| Układ (IC)  | Funkcja                     | chainbus/multiplexer |
-| :---------- | :-------------------------- | :------------------: |
-| **TMC5160** | Sterownik silnika krokowego |      `chainbus`      |
-
-#### Magistrala UART
-Komunikacja szeregowa UART realizowana jest w sposób bezpośredni z układem docelowym.
-
-| Układ (IC)   | Funkcja       | chainbus/multiplexer |
-| :----------- | :------------ | :------------------: |
-| **ESP32-C3** | Adapter WI-FI |      `chainbus`      |
+Hat nie ma na sobie żadnych urządzeń
 
 ### Pinout złączy
-
-| Jn     | Co                                         | Jaki pin co robi                                                     |
-| :----- | :----------------------------------------- | :------------------------------------------------------------------- |
-| **J1** | Zasilanie zewnętrzne silników              | Pin 1: VIN (zasilanie dodatnie)<br>Pin 2: GND (masa zasilania)       |
-| **J2** | Wyjście faz silnika krokowego              | Pin 1: Faza A1<br>Pin 2: Faza A2<br>Pin 3: Faza B1<br>Pin 4: Faza B2 |
-| **J3** | Wejście czujnika krańcowego (Limit Switch) | Pin 1: Sygnał wejściowy (z rezystorem Pull-Up)<br>Pin 2: GND (masa)  |
+Brak
 
 ### Konfiguracja układu (Zworki/Rezystory)
-
-| Co             | Jak podłączone | Efekt       |
-| :------------- | :------------- | :---------- |
-| **J1**         | 1-2 zwarte     | Silnik DC   |
-|                | rozwarte       | Silnik BLDC |
-| **J2**         | 1-2 zwarte     | 3.3V out    |
-|                | 2-3 zwarte     | 5V out      |
-| **R1, R2, R3** | Wlutowany R1   | 3.3V out    |
-|                | Wlutowany R2   | 5V out      |
-|                | Wlutowany R3   | VIN out     |
-
+Brak
 
 ### Szczegółowy opis techniczny
-[Tutaj umieść opis działania układu, parametry maksymalne etc]
+Hat Dummy to dystans mechaniczny. Możesz go dać jeśli potrzebujesz mieć fizycznie więcej miejsca miedzy hat'ami. Nie zużywa adresu hat'a -> możesz go włożyć w dowolne miejsce między inne hat'y i elektrycznie ani programowo się nic nie zmieni
 
 ### Gotowe arkusze hierarchiczne
-W projekcie zaprojektowano/użyto następujących arkuszy hierarchicznych:
-* [Nazwa arkusza 1] – [Krótki opis funkcjonalności, np. Zasilacz impulsowy 5V] - [ oryginalny/ wzięty z hata XXX]
-* [Nazwa arkusza 2] – [Krótki opis] - [ -||- ]
+Brak
 
 ---
 
@@ -147,13 +68,12 @@ Złącze ChainBus dostarcza następujące linie zasilania:
 
 ---
 
-## Sekcja 3: Licencja, linki i tagi
 
-### Licencjonowanie projektu
+## Sekcja 3: Licencje
 
-*   **PCB:** [CERN-OHL-W](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2) - Umożliwia modyfikacje i sprzedaż, ale musi pozostawić oryginalnego autora i zmiany muszą być open source
-*   **Software:** [MIT License](https://opensource.org/licenses/MIT) - Umożliwia modyfikacje i sprzedaż, ale musi pozostawić oryginalnego autora. Zmiany **nie muszą być open source**
+### Licencje projektu
+
+*   **PCB:** CERN-OHL-P
+*   **Software:** MIT License
 
 [Template](https://github.com/KoNaR-Hefajstos/MMS3_hat_templates/) jest na licencji CC0 1.0 Universal. **Reszta projektu nie jest na tej licencji**
-### Tagi projektu
-#chainbus #MMS3 #ModuCard
