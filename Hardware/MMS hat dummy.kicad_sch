@@ -3278,22 +3278,6 @@
 		(color 0 0 0 0)
 		(uuid "e2cf2fee-bc09-480f-884c-62524010e0f2")
 	)
-	(no_connect
-		(at 149.86 74.93)
-		(uuid "36f30eaa-73b8-4fed-8632-8c9ed1b4b15c")
-	)
-	(no_connect
-		(at 71.12 74.93)
-		(uuid "641055aa-986b-4acc-adec-f014faaa807c")
-	)
-	(no_connect
-		(at 147.32 74.93)
-		(uuid "7acebe28-e9e5-4d79-aa64-60e582ad1f9f")
-	)
-	(no_connect
-		(at 73.66 74.93)
-		(uuid "b4058771-6d4e-44ee-a2f1-8dac940cba06")
-	)
 	(bus_entry
 		(at 142.24 106.68)
 		(size 2.54 -2.54)
@@ -4588,6 +4572,16 @@
 		)
 		(uuid "fd522965-3ff5-4bd2-9a1e-49f4d0751a52")
 	)
+	(label "R2"
+		(at 73.66 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0821485e-37bb-404f-a459-d3e1549e6466")
+	)
 	(label "Chainbus.CS"
 		(at 142.24 88.9 270)
 		(effects
@@ -4628,6 +4622,16 @@
 		)
 		(uuid "2a2e1d69-24d9-485e-9725-16faaeab1e8f")
 	)
+	(label "R2"
+		(at 149.86 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2d7e2aca-f330-4d1a-a82a-1f07e90d5e0d")
+	)
 	(label "SEL1"
 		(at 40.64 97.79 270)
 		(effects
@@ -4647,6 +4651,16 @@
 			(justify left bottom)
 		)
 		(uuid "4018de8e-d717-48f7-9aca-6441ab399f91")
+	)
+	(label "R1"
+		(at 71.12 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4856d994-3fd0-44b0-8342-29ef223d1f6e")
 	)
 	(label "SEL8"
 		(at 58.42 97.79 270)
@@ -4687,6 +4701,16 @@
 			(justify right bottom)
 		)
 		(uuid "5b5f9036-b568-43fe-95e4-1d773448da7d")
+	)
+	(label "R1"
+		(at 147.32 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5bd98ed8-c10a-4685-af1b-7296809c60ab")
 	)
 	(label "SEL8"
 		(at 134.62 97.79 270)
