@@ -28,6 +28,8 @@ Brak
 ### Szczegółowy opis techniczny
 Hat Dummy to dystans mechaniczny. Możesz go dać jeśli potrzebujesz mieć fizycznie więcej miejsca miedzy hat'ami. Nie zużywa adresu hat'a -> możesz go włożyć w dowolne miejsce między inne hat'y i elektrycznie ani programowo się nic nie zmieni
 
+Bonusowo ma led'y które się świecą jak wybierzesz jakiegoś hat'a za nim. Elektrycznie nic nie zmienia
+
 ### Gotowe arkusze hierarchiczne
 Brak
 
